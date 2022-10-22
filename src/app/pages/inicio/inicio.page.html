@@ -1,9 +1,31 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>inicio</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <form (ngSubmit)="submitForm()">
 
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.email" placeholder="exemplo@gmail.com" name="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="usuario.senha" name="senha"></ion-input>
+    </ion-item>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col>
+          <ion-button type="button" expand="block" [routerLink]="['../add-usuario']">CADASTRAR</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button type="submit" expand="block">LOGIN</ion-button
+          >
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>

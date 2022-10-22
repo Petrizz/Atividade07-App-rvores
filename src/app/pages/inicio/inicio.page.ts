@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { Usuario } from 'src/app/models/usuario';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioPage implements OnInit {
 
-  constructor() { }
+  usuario: Usuario = new Usuario();
+
+  constructor(private navController: NavController) { }
 
   ngOnInit() {
   }
+
+  async submitForm(){
+    this.navController.navigateBack('/menu');
+ }
 
 }
