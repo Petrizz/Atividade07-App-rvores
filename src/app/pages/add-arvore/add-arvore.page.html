@@ -1,9 +1,43 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Cadastrar árvores</ion-title>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cadastrar Arvores</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <form (ngSubmit)="submitForm()">
+    <ion-item>
+      <ion-label position="floating">identificacao</ion-label>
+      <ion-input type="text" [(ngModel)] ='arvore.identificacao' name = "identificacao"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Observação</ion-label>
+      <ion-input type="text" [(ngModel)] = "arvore.observacao"  name = "observacao" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Localização</ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-label position="floating">Longitude</ion-label>
+            <ion-input type="text"  [(ngModel)] ='arvore.longitude' name = "longitude" ></ion-input>
+          </ion-col>
+          <ion-col>
+            <ion-label position="floating">Latitude</ion-label>
+            <ion-input type="text"  [(ngModel)] ='arvore.latitude' name = "latitude" ></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" expand="block" >Salvar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>

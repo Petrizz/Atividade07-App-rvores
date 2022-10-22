@@ -1,9 +1,39 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>ocorrencia</ion-title>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ocorrencia</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <form (ngSubmit)="submitForm()">
+    <ion-item>
+      <ion-label position="floating">Identificação</ion-label>
+      <ion-input type="text" [(ngModel)] ='arvore.identificacao' name = "identificacao"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descrição</ion-label>
+      <ion-input type="text" [(ngModel)] = "ocorrencia.descricao"  name = "descricao" readonly></ion-input>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" expand="block" >Salvar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 
+  <ion-list>
+    <ion-item-sliding *ngFor="let ocorrencia of ocorrencias; index as posicao;">
+      <ion-item [routerLink]="'/add-arvore/' + arvore.id" detail>
+
+      </ion-item>
+    <ion-item-options side="start">
+    <ion-item-option color="danger" (click) = 'excluirArvore(arvore)'>Excluir</ion-item-option>
+    </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
