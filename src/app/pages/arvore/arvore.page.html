@@ -35,7 +35,7 @@
   </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/add-arvore" color="primary">
+    <ion-fab-button [routerLink]="'/add-arvore/' + this.activatedRoute.snapshot.paramMap.get('id')" color="primary">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

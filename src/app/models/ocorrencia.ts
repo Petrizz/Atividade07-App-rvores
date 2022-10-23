@@ -1,7 +1,7 @@
 import { Arvore } from './arvore';
 
 export class Ocorrencia {
-    id: number;
+    id: string;
     descricao: string;
     data: string;
     arvore: Arvore;
@@ -23,10 +23,4 @@ export class Ocorrencia {
         }
          }
          }*/
-
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    Ocorrencia(){
-        this.data = null;
-        this.descricao = null;
-    }
 }

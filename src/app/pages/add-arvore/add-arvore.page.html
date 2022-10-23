@@ -12,7 +12,7 @@
 
     <ion-item>
       <ion-label position="floating">Identificação</ion-label>
-      <ion-input type="text" [(ngModel)] ='arvore.identificacao' name = "identificacao" readonly></ion-input>
+      <ion-input type="text" [(ngModel)] ='arvore.identificacao' name = "identificacao"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -43,7 +43,7 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-button type="button" onclick="Evento()" expand="block" >Atualizar Localização</ion-button>
+          <ion-button type="button" (click)="atualizar()" expand="block" >Atualizar Localização</ion-button>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -55,13 +55,16 @@
   </form>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/foto" color="primary">
+    <!--Ver uma maneira melhor de passar o id por parametro, ja que enquanto não clica em salvar o id é null-->
+    <ion-fab-button [routerLink]="'/foto/' + arvore.id" color="primary">
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
   <ion-fab vertical="bottom" horizontal="start" slot="fixed">
-    <ion-fab-button routerLink="/ocorrencia" color="primary">
+    <!--Ver uma maneira melhor de passar o id por parametro, ja que enquanto não clica em salvar o id é null-->
+    
+    <ion-fab-button [routerLink]="'/ocorrencia/' + arvore.id" color="primary">
       <ion-icon name="list"></ion-icon>
     </ion-fab-button>
   </ion-fab>

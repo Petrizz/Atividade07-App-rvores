@@ -20,7 +20,7 @@ export class MeusdadosPage implements OnInit {
     private toastController: ToastController) { }
 
   ngOnInit() {
-  this.usuario.id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+  this.usuario.id = this.activatedRoute.snapshot.paramMap.get('id');
 
    this.usuarioService.getUsuarioId(this.usuario.id)
     .then((json)=>{

@@ -14,7 +14,7 @@ export class UsuarioService {
     return this.httpClient.get(url).toPromise();
   }
 
-  getUsuarioId(id: number){
+  getUsuarioId(id: string){
     const url = 'https://api-atividade07.odiloncorrea.tech/api/usuario/'+ id;
     return this.httpClient.get(url).toPromise();
   }
