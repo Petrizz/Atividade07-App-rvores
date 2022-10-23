@@ -8,7 +8,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'meusdados',
+    path: 'meusdados/:id',
     loadChildren: () => import('./pages/meusdados/meusdados.module').then( m => m.MeusdadosPageModule)
   },
   {
@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
-    path: 'arvore',
+    path: 'arvore/:id',
     loadChildren: () => import('./pages/arvore/arvore.module').then( m => m.ArvorePageModule)
   },
   {
@@ -32,11 +32,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/ocorrencia/ocorrencia.module').then( m => m.OcorrenciaPageModule)
   },
   {
-    path: 'add-usuario',
-    loadChildren: () => import('./pages/add-usuario/add-usuario.module').then( m => m.AddUsuarioPageModule)
-  },
-  {
-    path: 'menu',
+    path: 'menu/:id',
     loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule)
   }
 ];

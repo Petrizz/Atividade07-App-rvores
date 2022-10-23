@@ -9,25 +9,33 @@
 
 <ion-content>
   <form (ngSubmit)="submitForm()">
+
     <ion-item>
-      <ion-label position="floating">identificacao</ion-label>
-      <ion-input type="text" [(ngModel)] ='arvore.identificacao' name = "identificacao"></ion-input>
+      <ion-label position="floating">Identificação</ion-label>
+      <ion-input type="text" [(ngModel)] ='arvore.identificacao' name = "identificacao" readonly></ion-input>
     </ion-item>
+
     <ion-item>
       <ion-label position="floating">Observação</ion-label>
-      <ion-input type="text" [(ngModel)] = "arvore.observacao"  name = "observacao" readonly></ion-input>
+      <ion-textarea [(ngModel)] = "arvore.observacao"  name = "observacao"></ion-textarea>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Localização</ion-label>
+      <ion-title position="floating">Localização</ion-title>
+    </ion-item>
+    <ion-item>
       <ion-grid>
         <ion-row>
           <ion-col>
+            <ion-item>
             <ion-label position="floating">Longitude</ion-label>
-            <ion-input type="text"  [(ngModel)] ='arvore.longitude' name = "longitude" ></ion-input>
+            <ion-input type="text"  [(ngModel)] ='arvore.longitude' name = "longitude" readonly></ion-input>
+            </ion-item>
           </ion-col>
           <ion-col>
+            <ion-item>
             <ion-label position="floating">Latitude</ion-label>
-            <ion-input type="text"  [(ngModel)] ='arvore.latitude' name = "latitude" ></ion-input>
+            <ion-input type="text"  [(ngModel)] ='arvore.latitude' name = "latitude" readonly ></ion-input>
+            </ion-item>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -35,9 +43,26 @@
     <ion-grid>
       <ion-row>
         <ion-col>
+          <ion-button type="button" onclick="Evento()" expand="block" >Atualizar Localização</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
           <ion-button type="submit" expand="block" >Salvar</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
   </form>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/foto" color="primary">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button routerLink="/ocorrencia" color="primary">
+      <ion-icon name="list"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

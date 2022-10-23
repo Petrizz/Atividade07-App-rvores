@@ -1,12 +1,14 @@
 import { Foto } from './foto';
+import { Usuario } from './usuario';
 
 export class Arvore {
-    private id: string;
-    private identificacao: string;
-    private observacao: string;
-    private latitude: string;
-    private longitude: string;
-    private fotos: Foto[];
+
+     id: string;
+     identificacao: string;
+     observacao: string;
+     latitude: string;
+     longitude: string;
+     usuario: Usuario;
 
     // eslint-disable-next-line @typescript-eslint/naming-convention
     Arvore(){
